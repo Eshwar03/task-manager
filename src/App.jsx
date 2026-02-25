@@ -18,13 +18,34 @@ function App() {
     };
     setTasks((prev) => [...prev, newTask]);
   }
-  console.log(tasks);
+  function deleteTask(id) {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  }
+  function toggleTask(id) {
+    setTasks((prev) =>
+      prev.map((task) => {
+        return task.id === id
+          ? { ...task, isCompleted: !task.isCompleted }
+          : task;
+      }),
+    );
+  }
+
+  function changeFilter(item) {
+    setFilter(item);
+  }
+
   return (
     <>
       <h1>Task Manager</h1>
       <TaskForm onAddTask={addTask} />
-      <FilterBar />
-      <TaskList />
+      <FilterBar filter={filter} tasks={tasks} onChange={changeFilter} />
+      <TaskList
+        filter={filter}
+        tasks={tasks}
+        onDelete={deleteTask}
+        onToggle={toggleTask}
+      />
     </>
   );
 }

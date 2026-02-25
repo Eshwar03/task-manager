@@ -8,7 +8,7 @@ function TaskForm(props) {
     if (!text) {
       return;
     }
-    props.onAddTask.addTask(inputs);
+    props.onAddTask(inputs);
     setInputs("");
   }
 
@@ -20,7 +20,7 @@ function TaskForm(props) {
           type="text"
           value={inputs}
         />
-        <input type="submit" />
+        <input type="submit" value="Add" />
       </form>
     </>
   );

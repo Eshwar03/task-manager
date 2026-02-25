@@ -1,8 +1,14 @@
-function TaskItem() {
+function TaskItem({ task, onDelete, onToggle }) {
   return (
-    <>
-      <p>task item</p>
-    </>
+    <li>
+      <input
+        type="checkbox"
+        checked={task.isCompleted}
+        onChange={() => onToggle(task.id)}
+      />
+      <span>{task.text}</span>
+      <button onClick={() => onDelete(task.id)}>Delete</button>
+    </li>
   );
 }
 export default TaskItem;
