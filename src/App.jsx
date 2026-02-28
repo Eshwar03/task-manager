@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -7,8 +7,20 @@ import TaskList from "./components/TaskList";
 import FilterBar from "./components/FilterBar";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    try {
+      const retrived_data = localStorage.getItem("tasks");
+      return retrived_data ? JSON.parse(retrived_data) : [];
+    } catch (err) {
+      console.log(err);
+      return [];
+    }
+  });
   const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function addTask(text) {
     const newTask = {
