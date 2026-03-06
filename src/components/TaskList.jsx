@@ -1,5 +1,5 @@
 import TaskItem from "./TaskItem";
-function TaskList({ tasks, filter, onDelete, onToggle }) {
+function TaskList({ tasks, filter, onDelete, onToggle, onEdit }) {
   const filteredTasks = tasks.filter((task) => {
     if (filter === "active") {
       return task.isCompleted === false;
@@ -22,6 +22,7 @@ function TaskList({ tasks, filter, onDelete, onToggle }) {
             task={task}
             onDelete={onDelete}
             onToggle={onToggle}
+            onEdit={onEdit}
           />
         ))}
       </ul>

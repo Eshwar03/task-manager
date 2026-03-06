@@ -43,6 +43,14 @@ function App() {
     );
   }
 
+  function editTask(id, editedTaskText) {
+    setTasks((prev) =>
+      prev.map((task) => {
+        return task.id === id ? { ...task, text: editedTaskText } : task;
+      }),
+    );
+  }
+
   function changeFilter(item) {
     setFilter(item);
   }
@@ -57,6 +65,7 @@ function App() {
         tasks={tasks}
         onDelete={deleteTask}
         onToggle={toggleTask}
+        onEdit={editTask}
       />
     </>
   );
