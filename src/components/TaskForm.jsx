@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 function TaskForm(props) {
   const [inputs, setInputs] = useState("");
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   function submitForm(e) {
     e.preventDefault();
@@ -19,6 +23,7 @@ function TaskForm(props) {
           onChange={(event) => setInputs(event.target.value)}
           type="text"
           value={inputs}
+          ref={inputRef}
         />
         <input type="submit" value="Add" />
       </form>

@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from "react";
+import styles from "../css/taskitem.module.css";
 function TaskItem({ task, onDelete, onToggle, onEdit }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(task.text);
-  const inputref = useRef(null);
+  const editInputref = useRef(null);
 
   useEffect(() => {
     if (isEditing) {
-      inputref.current.focus();
+      editInputref.current.focus();
     }
   }, [isEditing]);
 
@@ -42,7 +43,7 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
     <li>
       <input
         type="text"
-        ref={inputref}
+        ref={editInputref}
         value={editText}
         onChange={(event) => setEditText(event.target.value)}
         onKeyDown={handleKeyDown}
