@@ -29,7 +29,7 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
   }
 
   return !isEditing ? (
-    <li>
+    <li className={styles.taskListItem}>
       <input
         type="checkbox"
         checked={task.isCompleted}
@@ -40,7 +40,7 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
       <button onClick={() => setIsEditing(true)}>Edit</button>
     </li>
   ) : (
-    <li>
+    <li className={styles.taskListItem}>
       <input
         type="text"
         ref={editInputref}

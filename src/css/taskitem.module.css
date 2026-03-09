@@ -1,0 +1,6 @@
+.taskListItem {
+    list-style-type: none;
+    display: flex;
+    justify-items: stretch;
+
+}

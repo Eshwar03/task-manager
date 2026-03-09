@@ -57,16 +57,24 @@ function App() {
 
   return (
     <>
-      <h1>Task Manager</h1>
-      <TaskForm onAddTask={addTask} />
-      <FilterBar filter={filter} tasks={tasks} onChange={changeFilter} />
-      <TaskList
-        filter={filter}
-        tasks={tasks}
-        onDelete={deleteTask}
-        onToggle={toggleTask}
-        onEdit={editTask}
-      />
+      <div className="leftBlock">
+        <div>
+          <h1>Task Manager</h1>
+          <button></button>
+        </div>
+        <FilterBar filter={filter} tasks={tasks} onChange={changeFilter} />
+      </div>
+      <div className="rightBlock">
+        <TaskForm onAddTask={addTask} />
+
+        <TaskList
+          filter={filter}
+          tasks={tasks}
+          onDelete={deleteTask}
+          onToggle={toggleTask}
+          onEdit={editTask}
+        />
+      </div>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import styles from "../css/filterbar.module.css";
 function FilterBar({ filter, tasks, onChange }) {
   const totalTasks = tasks.length;
   const pendingTasks = tasks.filter(
@@ -7,14 +8,13 @@ function FilterBar({ filter, tasks, onChange }) {
 
   return (
     <>
-      <div>
-        <button onClick={() => onChange("all")}>All {totalTasks}</button>
-        <button onClick={() => onChange("active")}>
-          Active {pendingTasks}
-        </button>
-        <button onClick={() => onChange("completed")}>
+      <label>My Tasks</label>
+      <div className={styles.filterContainer}>
+        <div onClick={() => onChange("all")}>All Tasks {totalTasks}</div>
+        <div onClick={() => onChange("active")}>Pending {pendingTasks}</div>
+        <div onClick={() => onChange("completed")}>
           Completed {completeTasks}
-        </button>
+        </div>
       </div>
     </>
   );
