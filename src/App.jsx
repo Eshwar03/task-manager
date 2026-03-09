@@ -5,6 +5,8 @@ import "./App.css";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import FilterBar from "./components/FilterBar";
+import { GiHamburgerMenu } from "react-icons/gi";
+import TaskHeader from "./components/TaskHeader";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -58,15 +60,17 @@ function App() {
   return (
     <>
       <div className="leftBlock">
-        <div>
-          <h1>Task Manager</h1>
-          <button></button>
+        <div className="appMenu">
+          <div>Task Manager</div>
+          <button>
+            <GiHamburgerMenu className="giHamburgerMenu" />
+          </button>
         </div>
         <FilterBar filter={filter} tasks={tasks} onChange={changeFilter} />
       </div>
       <div className="rightBlock">
+        <TaskHeader filter={filter} />
         <TaskForm onAddTask={addTask} />
-
         <TaskList
           filter={filter}
           tasks={tasks}

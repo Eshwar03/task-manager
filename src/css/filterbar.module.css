@@ -1,4 +1,23 @@
 .filterContainer {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    text-align: left;
+    /* padding: 0px 15px 0 15px; */
+    margin-left: 15px;
+}
+
+.filterItems {
+    background-color: #343436;
+    border-radius: 10px 0px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    cursor: pointer
+}
+
+.taskHeading {
+    font-size: 0.7rem;
+    text-align: left;
+    /* border-bottom: 0.8px solid #4a4a4c; */
+    padding: 0px 15px 8px 30px;
 }

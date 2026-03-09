@@ -1,7 +1,7 @@
 import TaskItem from "./TaskItem";
 function TaskList({ tasks, filter, onDelete, onToggle, onEdit }) {
   const filteredTasks = tasks.filter((task) => {
-    if (filter === "active") {
+    if (filter === "pending") {
       return task.isCompleted === false;
     }
     if (filter === "completed") {

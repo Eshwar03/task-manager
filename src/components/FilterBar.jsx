@@ -8,12 +8,21 @@ function FilterBar({ filter, tasks, onChange }) {
 
   return (
     <>
-      <label>My Tasks</label>
+      <div className={styles.taskHeading}>My Tasks</div>
       <div className={styles.filterContainer}>
-        <div onClick={() => onChange("all")}>All Tasks {totalTasks}</div>
-        <div onClick={() => onChange("active")}>Pending {pendingTasks}</div>
-        <div onClick={() => onChange("completed")}>
-          Completed {completeTasks}
+        <div className={styles.filterItems} onClick={() => onChange("all")}>
+          <div>All Tasks</div>
+          <div> {totalTasks}</div>
+        </div>
+        <div className={styles.filterItems} onClick={() => onChange("pending")}>
+          <div>Pending</div> <div>{pendingTasks}</div>
+        </div>
+        <div
+          className={styles.filterItems}
+          onClick={() => onChange("completed")}
+        >
+          <div>Completed</div>
+          <div>{completeTasks}</div>
         </div>
       </div>
     </>

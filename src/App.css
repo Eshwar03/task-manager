@@ -1,16 +1,41 @@
 #root {
-  max-width: 1280px;
   text-align: center;
   display: flex;
   height: 100%;
+  width: 100%
+}
+
+.appMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding: 15px 15px 0 15px;
+}
+
+.appMenu div {
+  font-size: 1.5rem;
+}
+
+.appMenu button {
+  padding: 6px;
+  border-radius: 5px;
+  border: 0
+}
+
+.giHamburgerMenu {
+  font-size: 20px;
+  vertical-align: middle;
 }
 
 .leftBlock {
   min-width: 272px;
   box-sizing: border-box;
-  padding: 10px;
+  /* padding: 10px; */
+  background-color: #242424;
 }
 
 .rightBlock {
   width: 100%;
+  background-color: #343436;
 }
