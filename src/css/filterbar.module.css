@@ -2,12 +2,11 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    /* padding: 0px 15px 0 15px; */
     margin-left: 15px;
 }
 
 .filterItems {
-    background-color: #343436;
+    /* background-color: #343436; */
     border-radius: 10px 0px 0px 10px;
     display: flex;
     justify-content: space-between;
@@ -20,4 +19,8 @@
     text-align: left;
     /* border-bottom: 0.8px solid #4a4a4c; */
     padding: 0px 15px 8px 30px;
+}
+
+.filterActive {
+    background-color: #343436;
 }

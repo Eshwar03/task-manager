@@ -1,4 +1,5 @@
 import TaskItem from "./TaskItem";
+import styles from "../css/tasklist.module.css";
 function TaskList({ tasks, filter, onDelete, onToggle, onEdit }) {
   const filteredTasks = tasks.filter((task) => {
     if (filter === "pending") {
@@ -15,7 +16,7 @@ function TaskList({ tasks, filter, onDelete, onToggle, onEdit }) {
 
   return (
     <>
-      <ul>
+      <ul className={styles.tasklist}>
         {filteredTasks.map((task) => (
           <TaskItem
             key={task.id}

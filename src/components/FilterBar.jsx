@@ -10,15 +10,21 @@ function FilterBar({ filter, tasks, onChange }) {
     <>
       <div className={styles.taskHeading}>My Tasks</div>
       <div className={styles.filterContainer}>
-        <div className={styles.filterItems} onClick={() => onChange("all")}>
+        <div
+          className={`${styles.filterItems} ${filter == "all" ? styles.filterActive : ""}`}
+          onClick={() => onChange("all")}
+        >
           <div>All Tasks</div>
           <div> {totalTasks}</div>
         </div>
-        <div className={styles.filterItems} onClick={() => onChange("pending")}>
+        <div
+          className={`${styles.filterItems} ${filter == "pending" ? styles.filterActive : ""}`}
+          onClick={() => onChange("pending")}
+        >
           <div>Pending</div> <div>{pendingTasks}</div>
         </div>
         <div
-          className={styles.filterItems}
+          className={`${styles.filterItems} ${filter == "completed" ? styles.filterActive : ""}`}
           onClick={() => onChange("completed")}
         >
           <div>Completed</div>

@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "../css/taskitem.module.css";
+import { MdDeleteForever } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
 function TaskItem({ task, onDelete, onToggle, onEdit }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(task.text);
@@ -31,25 +33,38 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
   return !isEditing ? (
     <li className={styles.taskListItem}>
       <input
+        className={styles.checkbox}
         type="checkbox"
         checked={task.isCompleted}
         onChange={() => onToggle(task.id)}
       />
-      <span>{task.text}</span>
-      <button onClick={() => onDelete(task.id)}>Delete</button>
-      <button onClick={() => setIsEditing(true)}>Edit</button>
+      <div className={styles.textstretch}>{task.text}</div>
+      <button className={styles.editButton} onClick={() => setIsEditing(true)}>
+        <FaEdit className={styles.editIcon} />
+      </button>
+      <button className={styles.deleteButton} onClick={() => onDelete(task.id)}>
+        <MdDeleteForever className={styles.deleteIcon} />
+      </button>
     </li>
   ) : (
     <li className={styles.taskListItem}>
       <input
+        className={styles.editForm}
         type="text"
         ref={editInputref}
         value={editText}
         onChange={(event) => setEditText(event.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <button onClick={() => handleSave(task.id)}>Save</button>
-      <button onClick={() => handleCancel(task.id)}>Cancel</button>
+      <button className={styles.saveButton} onClick={() => handleSave(task.id)}>
+        Save
+      </button>
+      <button
+        className={styles.cancelButton}
+        onClick={() => handleCancel(task.id)}
+      >
+        Cancel
+      </button>
     </li>
   );
 }
