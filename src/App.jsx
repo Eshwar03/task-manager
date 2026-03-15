@@ -19,6 +19,7 @@ function App() {
     }
   });
   const [filter, setFilter] = useState("all");
+  const [isLeftBlock, setIsLeftBlock] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -59,17 +60,24 @@ function App() {
 
   return (
     <>
-      <div className="leftBlock">
+      <div className={isLeftBlock ? "leftBlock" : "leftBlockHidden"}>
         <div className="appMenu">
           <div>Task Manager</div>
-          <button>
+          <button
+            className="giHamburgerMenuButton"
+            onClick={() => setIsLeftBlock((prev) => !prev)}
+          >
             <GiHamburgerMenu className="giHamburgerMenu" />
           </button>
         </div>
         <FilterBar filter={filter} tasks={tasks} onChange={changeFilter} />
       </div>
       <div className="rightBlock">
-        <TaskHeader filter={filter} />
+        <TaskHeader
+          filter={filter}
+          setIsLeftBlock={setIsLeftBlock}
+          isLeftBlock={isLeftBlock}
+        />
         <TaskForm onAddTask={addTask} />
         <TaskList
           filter={filter}

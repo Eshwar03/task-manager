@@ -28,14 +28,34 @@
   vertical-align: middle;
 }
 
+.giHamburgerMenuButton {
+  cursor: pointer;
+  background: none;
+}
+
+.giHamburgerMenuButton:hover {
+  background: #343436;
+}
+
 .leftBlock {
   min-width: 272px;
   box-sizing: border-box;
-  /* padding: 10px; */
   background-color: #242424;
+}
+
+.leftBlockHidden {
+  display: none;
 }
 
 .rightBlock {
   width: 100%;
   background-color: #343436;
+}
+
+@media (max-width:600px) {
+  .leftBlock {
+    min-width: 200px;
+    position: absolute;
+    height: 100%;
+  }
 }
