@@ -7,7 +7,7 @@ import TaskList from "./components/TaskList";
 import FilterBar from "./components/FilterBar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import TaskHeader from "./components/TaskHeader";
-import useMediaQuery from "./useMediaQuery";
+import useMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
