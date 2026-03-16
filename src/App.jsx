@@ -7,6 +7,7 @@ import TaskList from "./components/TaskList";
 import FilterBar from "./components/FilterBar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import TaskHeader from "./components/TaskHeader";
+import useMediaQuery from "./useMediaQuery";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -19,7 +20,11 @@ function App() {
     }
   });
   const [filter, setFilter] = useState("all");
-  const [isLeftBlock, setIsLeftBlock] = useState(false);
+  let isSmallScreen = useMediaQuery("(max-width:600px)");
+  const [isLeftBlock, setIsLeftBlock] = useState(isSmallScreen);
+  useEffect(() => {
+    setIsLeftBlock(isSmallScreen);
+  }, [isSmallScreen]);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -60,7 +65,7 @@ function App() {
 
   return (
     <>
-      <div className={isLeftBlock ? "leftBlock" : "leftBlockHidden"}>
+      <div className={isLeftBlock ? "leftBlockHidden" : "leftBlock"}>
         <div className="appMenu">
           <div>Task Manager</div>
           <button

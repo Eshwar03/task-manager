@@ -6,7 +6,7 @@ function TaskHeader({ filter, setIsLeftBlock, isLeftBlock }) {
     <div className={styles.headerContainer}>
       <button
         className={`${
-          !isLeftBlock
+          isLeftBlock
             ? styles.giHamburgerMenuButton
             : styles.giHamburgerMenuButtonHidden
         } ${styles.giHamburgerMenuButtonUnhide}`}
