@@ -1,0 +1,35 @@
+.taskForm {
+    display: flex;
+    margin: 30px;
+    border-radius: 20px;
+    overflow: auto;
+    border: 1px solid transparent;
+    background: #242424;
+}
+
+.taskForm:focus-within {
+    border: 1px solid rgba(255, 255, 255, 0.499);
+}
+
+.formInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background: #242424;
+}
+
+.formInput:focus-visible {
+    outline: none;
+}
+
+.formSubmit {
+    padding: 10px;
+    width: 75px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.formSubmit:hover {
+    background-color: green
+}

@@ -1,0 +1,96 @@
+.taskListItem {
+    list-style-type: none;
+    display: flex;
+    background: #242424;
+    margin: 10px 0 10px 0;
+    min-height: 36px;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid transparent;
+}
+
+.taskListItem:focus-within {
+    border: 1px solid gray;
+}
+
+.textstretch {
+    flex: 1;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.checkbox {
+    margin-left: 20px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.deleteButton {
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 2px 6px;
+    cursor: pointer;
+    background: none;
+
+}
+
+.deleteButton:hover {
+    background: red;
+}
+
+.editButton {
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 2px 6px;
+    cursor: pointer;
+    background: none;
+}
+
+.editButton:hover {
+    background: #6b6b6b;
+}
+
+.deleteIcon {
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.editIcon {
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.saveButton,
+.cancelButton {
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 3px 6px;
+    cursor: pointer;
+    background: none;
+}
+
+.saveButton:hover {
+    background: darkgreen
+}
+
+.cancelButton:hover {
+    background: red
+}
+
+.editForm {
+    flex: 1;
+    text-align: left;
+    margin-left: 25px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+/* .taskListItemBorder {
+    border: 1px solid gray;
+} */

@@ -1,42 +1,61 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  display: flex;
+  height: 100%;
+  width: 100%
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.appMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding: 15px 15px 0 15px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.appMenu div {
+  font-size: 1.5rem;
+}
+
+.appMenu button {
+  padding: 6px;
+  border-radius: 5px;
+  border: 0
+}
+
+.giHamburgerMenu {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.giHamburgerMenuButton {
+  cursor: pointer;
+  background: none;
+}
+
+.giHamburgerMenuButton:hover {
+  background: #343436;
+}
+
+.leftBlock {
+  min-width: 272px;
+  box-sizing: border-box;
+  background-color: #242424;
+}
+
+.leftBlockHidden {
+  display: none;
+}
+
+.rightBlock {
+  width: 100%;
+  background-color: #343436;
+}
+
+@media (max-width:600px) {
+  .leftBlock {
+    min-width: 200px;
+    position: absolute;
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

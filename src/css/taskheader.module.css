@@ -1,0 +1,42 @@
+.activeFilter {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 15px;
+    background: #5c5c5e;
+    text-align: left;
+    flex: 1;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    background: #5c5c5e;
+}
+
+.giHamburgerMenu {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.giHamburgerMenuButton {
+    cursor: pointer;
+    background: none;
+    padding: 6px;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 8px;
+}
+
+.giHamburgerMenuButton:hover {
+    background: #242424;
+}
+
+.giHamburgerMenuButtonHidden {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .giHamburgerMenuButtonUnhide {
+        display: inline-block;
+    }
+}
