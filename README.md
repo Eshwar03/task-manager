@@ -1,3 +1,27 @@
+# React Task Manager
+
+A clean task management app built with React that supports task creation, editing, filtering, and persistent storage using LocalStorage.
+
+## Features
+
+✔ Add tasks
+✔ Edit tasks
+✔ Delete tasks
+✔ Mark complete
+✔ Filter tasks
+✔ LocalStorage persistence
+
+## Tech Stack
+
+React
+JavaScript
+CSS
+Vite
+
+## Live Demo
+
+https://taskmanager-gamma-murex.vercel.app/
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
