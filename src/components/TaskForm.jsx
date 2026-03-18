@@ -6,7 +6,7 @@ function TaskForm(props) {
   const inputRef = useRef(null);
   useEffect(() => {
     inputRef.current.focus();
-  });
+  }, []);
 
   function submitForm(e) {
     e.preventDefault();
