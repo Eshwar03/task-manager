@@ -39,23 +39,52 @@
 
 .leftBlock {
   min-width: 272px;
-  box-sizing: border-box;
   background-color: #242424;
+  position: absolute;
+  height: 100%;
 }
 
 .leftBlockHidden {
-  display: none;
+  min-width: 272px;
+  position: absolute;
+  transform: translate(-272px, 0);
+  background-color: #242424;
+  height: 100%;
+}
+
+.leftBlockTransition {
+  transition: transform 0.3s ease;
 }
 
 .rightBlock {
+  padding-left: 272px;
+}
+
+.rightBlockFull {
+  padding-left: 0px;
+}
+
+.rightBlockTransition {
   width: 100%;
   background-color: #343436;
+  transition: padding-left 0.3s ease;
 }
+
 
 @media (max-width:600px) {
   .leftBlock {
     min-width: 200px;
     position: absolute;
     height: 100%;
+
+  }
+
+  .leftBlockHidden {
+    min-width: 200px;
+
+  }
+
+  .rightBlock {
+    padding-left: 0px;
   }
 }
