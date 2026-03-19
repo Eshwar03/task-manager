@@ -63,7 +63,9 @@ function App() {
 
   return (
     <>
-      <div className={isLeftBlock ? "leftBlockHidden" : "leftBlock"}>
+      <div
+        className={`${isLeftBlock ? "leftBlockHidden" : "leftBlock"} ${"leftBlockTransition"}`}
+      >
         <div className="appMenu">
           <div>Task Manager</div>
           <button
@@ -75,7 +77,9 @@ function App() {
         </div>
         <FilterBar filter={filter} tasks={tasks} onChange={changeFilter} />
       </div>
-      <div className="rightBlock">
+      <div
+        className={`${isLeftBlock ? "rightBlockFull" : "rightBlock"} ${"rightBlockTransition"}`}
+      >
         <TaskHeader
           filter={filter}
           setIsLeftBlock={setIsLeftBlock}
