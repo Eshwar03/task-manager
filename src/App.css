@@ -15,7 +15,9 @@
 
 .appMenu div {
   font-size: 1.5rem;
+  padding-bottom: 0px 0px 4px 4px;
 }
+
 
 .appMenu button {
   padding: 6px;
@@ -86,5 +88,9 @@
 
   .rightBlock {
     padding-left: 0px;
+  }
+
+  .appMenu div {
+    font-size: 1.1rem;
   }
 }
