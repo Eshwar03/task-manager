@@ -20,7 +20,7 @@ Vite
 
 ## Live Demo
 
-https://taskmanager-gamma-murex.vercel.app/
+https://task-manager-nine-azure-28.vercel.app/
 
 # React + Vite
 
