@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
@@ -36,10 +36,10 @@ function App() {
     };
     setTasks((prev) => [...prev, newTask]);
   }
-  function deleteTask(id) {
+  const deleteTask = useCallback((id) => {
     setTasks((prev) => prev.filter((task) => task.id !== id));
-  }
-  function toggleTask(id) {
+  }, []);
+  const toggleTask = useCallback((id) => {
     setTasks((prev) =>
       prev.map((task) => {
         return task.id === id
@@ -47,15 +47,15 @@ function App() {
           : task;
       }),
     );
-  }
+  }, []);
 
-  function editTask(id, editedTaskText) {
+  const editTask = useCallback((id, editedTaskText) => {
     setTasks((prev) =>
       prev.map((task) => {
         return task.id === id ? { ...task, text: editedTaskText } : task;
       }),
     );
-  }
+  }, []);
 
   function changeFilter(item) {
     setFilter(item);
