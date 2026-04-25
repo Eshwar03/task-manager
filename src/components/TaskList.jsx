@@ -1,6 +1,8 @@
+import React from "react";
+
 import TaskItem from "./TaskItem";
 import styles from "../css/tasklist.module.css";
-function TaskList({ tasks, filter, onDelete, onToggle, onEdit }) {
+const TaskList = React.memo(({ tasks, filter, onDelete, onToggle, onEdit }) => {
   const filteredTasks = tasks.filter((task) => {
     if (filter === "pending") {
       return task.isCompleted === false;
@@ -29,5 +31,5 @@ function TaskList({ tasks, filter, onDelete, onToggle, onEdit }) {
       </ul>
     </>
   );
-}
+});
 export default TaskList;
