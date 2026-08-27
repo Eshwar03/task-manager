@@ -23,39 +23,6 @@ function App() {
         setIsLeftBlock(isSmallScreen);
     }, [isSmallScreen]);
 
-    useEffect(() => {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-    }, [tasks]);
-
-    // function addTask(text) {
-    //   const newTask = {
-    //     id: Date.now(),
-    //     text: text,
-    //     isCompleted: false,
-    //   };
-    //   setTasks((prev) => [...prev, newTask]);
-    // }
-    // const deleteTask = useCallback((id) => {
-    //   setTasks((prev) => prev.filter((task) => task.id !== id));
-    // }, []);
-    // const toggleTask = useCallback((id) => {
-    //   setTasks((prev) =>
-    //     prev.map((task) => {
-    //       return task.id === id
-    //         ? { ...task, isCompleted: !task.isCompleted }
-    //         : task;
-    //     }),
-    //   );
-    // }, []);
-
-    // const editTask = useCallback((id, editedTaskText) => {
-    //   setTasks((prev) =>
-    //     prev.map((task) => {
-    //       return task.id === id ? { ...task, text: editedTaskText } : task;
-    //     }),
-    //   );
-    // }, []);
-
     function changeFilter(item) {
         setFilter(item);
     }
@@ -89,12 +56,7 @@ function App() {
                     isLeftBlock={isLeftBlock}
                 />
                 <TaskForm />
-                <TaskList
-                    filter={filter}
-                    tasks={tasks}
-                    // onDelete={deleteTask}
-                    // onEdit={editTask}
-                />
+                <TaskList filter={filter} tasks={tasks} />
             </div>
         </>
     );

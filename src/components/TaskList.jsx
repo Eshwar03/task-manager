@@ -2,13 +2,13 @@ import React from 'react';
 
 import TaskItem from './TaskItem';
 import styles from '../css/tasklist.module.css';
-const TaskList = React.memo(({ tasks, filter, onDelete, onEdit }) => {
+const TaskList = React.memo(({ tasks, filter }) => {
     const filteredTasks = tasks.filter((task) => {
         if (filter === 'pending') {
-            return task.isCompleted === false;
+            return task.completed === false;
         }
         if (filter === 'completed') {
-            return task.isCompleted === true;
+            return task.completed === true;
         }
         return true;
     });
@@ -20,12 +20,7 @@ const TaskList = React.memo(({ tasks, filter, onDelete, onEdit }) => {
         <>
             <ul className={styles.tasklist}>
                 {filteredTasks.map((task) => (
-                    <TaskItem
-                        key={task.id}
-                        task={task}
-                        onDelete={onDelete}
-                        onEdit={onEdit}
-                    />
+                    <TaskItem key={task.id} task={task} />
                 ))}
             </ul>
         </>
